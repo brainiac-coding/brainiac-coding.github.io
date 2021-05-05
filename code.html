@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<title>&lt;EZ> Coding</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+
+textarea {
+  width: 50%;
+  height: 500px;
+  display: inline-block;
+  background: #aaaaff;
+  outline: none;
+  font-family: Courier, sans-serif;
+  font-size: 14px;
+	position:absolute;
+	left:0px;
+	top:60px;
+	border:none;
+
+}
+
+iframe {
+	position:absolute;
+	left:50%;
+  width: 50%;
+  height: 496px;
+	top:60px;
+	border:none;
+	border-top: 4px #aaaaff solid;
+	border-bottom: 4px #aaaaff solid;
+			}
+			#dwn-btn{
+			margin:10px;
+				padding:5px;
+				background-color:#7777ff;
+				color:white;
+				position:relative;
+				border:none;
+				border-radius:10px;
+				width:100px;
+				height:40px;
+position:absolute;
+				left:46%;
+				top:560px;
+				font-family:Courier, sans serif;
+			}
+			/* Style the tab */
+.tab {
+  overflow: hidden;
+	background-color:#aaaaff;
+	width:100%;
+	height:45px;
+			}
+
+/* Style the buttons inside the tab */
+.tab button{
+float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+	color:white;
+	background-color:inherit;
+	font-family:Courier, sans serif;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color:#7777ff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+ background-color:#7777ff;
+}
+	h1{
+		margin:10px;
+		font-family:Courier, sans serif;
+		color:#7777ff;
+		padding:10px;
+			}
+			p,ul{
+				color: #77f;
+				font-family: Helvetica, sans serif;
+			}
+			pre {
+				color:#aaf;
+				font-family: Helvetica, sans serif;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<h1 style="margin:10px;text-align:center;font-family:Courier, sans serif;color:#7777ff">&lt;EZ&gt; Coding</h1>-->
+		<div class="tab">
+  
+			<button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Home')">Home</button>
+			<button class="tablinks" onclick="openCity(event, 'Code')">Code</button>
+			<button class="tablinks" onclick="openCity(event, 'Ref')">Quick Reference</button>
+</div>
+<div id="Code" class="tabcontent">		
+<textarea id="html" placeholder="HTML" style="resize:none;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	
+&lt;style&gt;
+	
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+    <iframe id="code"></iframe>
+
+	
+    <script type="text/javascript" src="app.js"></script>
+		
+			<pre><button id="dwn-btn"><i class="fa fa-download"></i>&nbsp;Download</button></pre>
+		</div>	
+		<div id="Home" class="tabcontent">
+			<p>Did you know that 92.2% of websites use a coding language called HTML (Hyper Text Mark-up Language)? HTML is the most well known mark-up language and easy to use, too. With HTML, you can code websites of your own! With EZ Coding, you can learn HTML, Javascript (a coding used for video games!), and CSS (styling for websites). Using what you learn from the courses, quick reference, you can go on the "Code" tab and make your website. Then, you can download it and open it as a real website!</p>
+		</div>
+		<div id="Ref" class="tabcontent">
+		<h1>Structure Rules</h1>
+			<p>HTML is made up of <b>Tags</b>. Tags contain text. Depending on the tag, the text will show up in a certain way, show an image or shape, or show a link or button. The text goes inbetween an anding and starting tag. The starting tag looks like this:&lt;<i>tag name</i>&gt;. The ending tag looks like this: &lt;<b>/</b><i>tag name</i>&gt;. Tags can contain attributes. Attributes are declared in the starting tag. Here's an example: &lt;<i>Tag Name Attribute</i>="..."&gt;.Tags that you want to show on your website go in the body tag (already on the Code Editor). Tags that go inside of the head tag don't show up on your website. They just tell your website how to work. For example, the style tag goes in the head. CSS coding goes in the style tag. CSS follows this format:</p>
+			<pre>
+<i>tag name</i> {		
+		<i>property</i>: <i>value</i>;
+		<i>property</i>: <i>value</i>;
+		<i>property</i>: <i>value</i>;
+		...
+}</pre>
+			<p>You can style as many tags as you want in the style tag. In CSS, the tag name is known as the selector because it selects what tag you are styling. Each row inbetween the curly brackets <b>{}</b> is called a declaration because it declares the value of a property.</p>
+	<h1>HTML</h1>
+			<p>Here is a list of tag names with descriptions:</p>
+<ul>
+	<li><b>p</b> The <i>p</i> is short for paragraph. Whatever you type inbetween the starting and ending tags shows up as small, thin text. Ex. &lt;p&gt;This will make a paragraph.&lt;/p&gt;</li>
+	<li><b>h<i>(1-6)</i></b> The <i>h</i> is short for heading. h1 is the largest and thickest, and h6 is the smallest and thinnest. Ex. &lt;h1&gt;This will make a heading.&lt;/h1&gt;</li>
+	<li><b>a</b> The <i>a</i> tag is for hyperlinks. The link address is put in the "href" attribute. Ex. &lt;a href="linkAddress"&gt;Click Me!&lt;/a&gt;</li>
+	<li><b>img</b> "img" is short for image. The img tag is special because rather than an ending tag, it has a slash after the tag name and attribute(s). The image address is put in the "src" attribute. Ex. &lt;img src="imgAddress"/&gt;.</li>
+	<li><b>ul</b> "ul" is short for un-ordered list (bullet points). The <b>li</b> tag (list) is used for each bullet point. Ex. &lt;ul&gt;&lt;li&gt;Bullet Point&lt;/li&gt;&lt;li&gt;Bullet Point&lt;/li&gt;&lt;li&gt;Bullet Point&lt;/li&gt;&lt;/ul&gt;</li>
+	<li><b>ol</b> "ol" is short for ordered list (numbered list). It also uses the <b>li</b> tag. Ex. &lt;ol&gt;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;/ol&gt;</li>
+			</ul>
+<h1>CSS</h1>
+	</div><script>
+			function compile() {
+  var html = document.getElementById("html");
+  var code = document.getElementById("code").contentWindow.document;
+
+  document.body.onkeyup = function() {
+	  
+    code.open();
+    code.writeln(
+      html.value
+    );
+    code.close();
+  };
+}
+
+compile();
+		</script>
+<script>
+	function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+// Start file download.
+document.getElementById("dwn-btn").addEventListener("click", function(){
+    // Generate download of hello.txt file with some content
+	var text = document.getElementById("html").value;
+    var filename = prompt("Please enter your website name:","website");
+    download(filename + ".html", text);
+}, false);
+	
+	</script>
+		<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+	</body>
+</html>
