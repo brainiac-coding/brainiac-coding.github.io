@@ -47,6 +47,21 @@ position:absolute;
 				top:560px;
 				font-family:Courier, sans serif;
 			}
+			.upload{
+				margin:10px;
+				padding:5px;
+				background-color:#7777ff;
+				color:white;
+				position:relative;
+				border:none;
+				border-radius:10px;
+				position:absolute;
+				left:59%;
+				top:560px;
+				width:200px;
+				height:40px;
+				font-family:Courier, sans serif;
+			}
 			/* Style the tab */
 .tab {
   overflow: hidden;
@@ -129,6 +144,7 @@ float: left;
     <script type="text/javascript" src="app.js"></script>
 		
 			<pre><button id="dwn-btn"><i class="fa fa-download"></i>&nbsp;Download</button></pre>
+	<pre><button class="upload" action="welcome_get.php><i class="fa fa-upload"></i>&nbsp;Upload to Brainiac Web</button></pre>
 		</div>	
 		<div id="Ref" class="tabcontent">
 		<h1>Structure Rules</h1>
@@ -190,7 +206,6 @@ document.getElementById("dwn-btn").addEventListener("click", function(){
     var filename = prompt("Please enter your website name:","website");
     download(filename + ".html", text);
 }, false);
-	
 	</script>
 		<script>
 function openCity(evt, cityName) {
