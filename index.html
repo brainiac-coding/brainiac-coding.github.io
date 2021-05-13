@@ -144,7 +144,7 @@ float: left;
     <script type="text/javascript" src="app.js"></script>
 		
 			<pre><button id="dwn-btn"><i class="fa fa-download"></i>&nbsp;Download</button></pre>
-	<pre><button class="upload" action="welcome_get.php><i class="fa fa-upload"></i>&nbsp;Upload to Brainiac Web</button></pre>
+	<pre><button class="upload" onclick="post()"><span class="glyphicon glyphicon-upload"></span></i>&nbsp;Upload to Brainiac Web</button></pre>
 		</div>	
 		<div id="Ref" class="tabcontent">
 		<h1>Structure Rules</h1>
@@ -251,30 +251,28 @@ document.getElementById("defaultOpen").click();
 		<script>
 		final FirebaseDatabase database = FirebaseDatabase.getInstance();
 DatabaseReference ref = database.getReference("server/saving-data/fireblog");
-		public static class User {
 
-  public String date_of_birth;
-  public String full_name;
-  public String nickname;
+		function post(){
+		var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
 
-  public User(String dateOfBirth, String fullName) {
-    // ...
-  }
+    element.style.display = 'none';
+    document.body.appendChild(element);
 
-  public User(String dateOfBirth, String fullName, String nickname) {
-    // ...
-  }
+    element.click();
 
+    document.body.removeChild(element);
 }
 
-DatabaseReference usersRef = ref.child("users");
-
-Map<String, User> users = new HashMap<>();
-users.put("alanisawesome", new User("June 23, 1912", "Alan Turing"));
-users.put("gracehop", new User("December 9, 1906", "Grace Hopper"));
-
-usersRef.setValueAsync(users);
-
+// Start file download.
+document.getElementByClassName("upload").addEventListener("click", function(){
+    // Generate download of hello.txt file with some content
+	var text = document.getElementById("html").value;
+    var filename = prompt("Please enter your website name:","website");
+    setValueAsync(filename + ".html", text);
+}, false);
+		}
 		</script>
 	</body>
 </html>
