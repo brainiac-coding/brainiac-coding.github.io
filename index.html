@@ -274,10 +274,13 @@ document.getElementByClassName("upload").addEventListener("click", function(){
 	document.getElementByClassName("upload").addEventListener("click",function(){
 			// Create a root reference
 var storageRef = firebase.storage().ref();
-
+var websiteRef = storageRef.child('Websites');
 // Create a reference to 'mountains.jpg'
-var websiteRef = storageRef.child(filename + ".html"); 
-
+var siteName = filename + ".html";
+	var fileRef = websiteRef.child(siteName);
+var path = fileRef.fullPath;
+var name = siteName.name;
+	var websiteRef = fileRef.parent;
 				
 			}),false);
 		}
