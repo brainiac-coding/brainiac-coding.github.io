@@ -272,22 +272,13 @@ document.getElementByClassName("upload").addEventListener("click", function(){
     var filename = prompt("Please enter your website name:","website");
 }
 							  var storageRef = firebase.storage().ref();
-var websiteRef = storageRef.child('Websites');
-// Create a reference to 'mountains.jpg'
-var siteName = filename + ".html";
-	var fileRef = websiteRef.child(siteName);
-var path = fileRef.fullPath;
-var name = siteName.name;
-	var websiteRef = fileRef.parent;
-	document.getElementByClassName("upload").addEventListener("click",function(){
-			// Create a root reference
 // Create the file metadata
 var metadata = {
   contentType: 'text/html'
 };
 
 // Upload file and metadata to the object 'images/mountains.jpg'
-var uploadTask = storageRef.child('Websites/' + file.name).put(file, metadata);
+var uploadTask = storageRef.child('Websites/' + filename + '.html' .name).put(filename + '.html', metadata);
 
 // Listen for state changes, errors, and completion of the upload.
 uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
