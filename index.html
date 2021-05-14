@@ -251,32 +251,8 @@ document.getElementById("defaultOpen").click();
   firebase.analytics();
 </script>
 		<script>
-			function refFullExample() {
-  // [START storage_ref_full_example]
-  // Points to the root reference
-  var storageRef = firebase.storage().ref();
 
-  // Points to 'images'
-  var websitesRef = storageRef.child('Websites');
-
-  // Points to 'images/space.jpg'
-  // Note that you can use variables to create child values
-  var fileName = 'websites.js';
-  var siteRef = websitesRef.child(fileName);
-
-  // File path is 'images/space.jpg'
-  var path = siteRef.fullPath;
-
-  // File name is 'space.jpg'
-  var name = siteRef.name;
-
-  // Points to 'images'
-  var imagesRef = siteRef.parent;
-  // [END storage_ref_full_example]
-}
-
-		function upload(siteName, text) 
-			var database = firebase.database();		
+		function upload(siteName, text) 	
 		var element = document.createElement('a');
     element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', siteName);
@@ -288,68 +264,39 @@ document.getElementById("defaultOpen").click();
 
     document.body.removeChild(element);
 }
-
-// Start file download.
-document.getElementByClassName("upload").addEventListener("click", function(){
-    // Generate download of hello.txt file with some content
-	var text = document.getElementById("html").value;
-    var siteName = prompt("Please enter your website name:","website");
-	uploadHandleError(file);
-	refFullExample()
-}
-							  
-function uploadHandleError(file) {
-  const storageRef = firebase.storage().ref();
-
-  // [START storage_upload_handle_error]
-  // Create the file metadata
-
-  // Upload file and metadata to the object 'images/mountains.jpg'
-  var uploadTask = storageRef.child('Websites/' + file.name).put(file);
-
-  // Listen for state changes, errors, and completion of the upload.
-  uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
-    (snapshot) => {
-      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log('Upload is ' + progress + '% done');
-      switch (snapshot.state) {
-        case firebase.storage.TaskState.PAUSED: // or 'paused'
-          console.log('Upload is paused');
-          break;
-        case firebase.storage.TaskState.RUNNING: // or 'running'
-          console.log('Upload is running');
-          break;
-      }
-    }, 
-    (error) => {
-      // A full list of error codes is available at
-      // https://firebase.google.com/docs/storage/web/handle-errors
-      switch (error.code) {
-        case 'storage/unauthorized':
-          // User doesn't have permission to access the object
-          break;
-        case 'storage/canceled':
-          // User canceled the upload
-          break;
-
-        // ...
-
-        case 'storage/unknown':
-          // Unknown error occurred, inspect error.serverResponse
-          break;
-      }
-    }, 
-    () => {
-      // Upload completed successfully, now we can get the download URL
-      uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-        console.log('File available at', downloadURL);
-      });
-    }
-  );
-  // [END storage_upload_handle_error]
-}
-			
+function writeWebsiteData(websiteData, websiteName, code){
+	var database = firebase.database();		
+	firebase.database().ref('Websites/websites.js').set({
+				var websiteData = {
+    websiteName:websiteName,
+    code: code,
+  };
+			}
+	
 		</script>
+				<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyDYcryMPyVOA96RTs7zZyZ7DRF1Ri1WKGI",
+  authDomain: "brainiac-b49d9.firebaseapp.com",
+  databaseURL: "https://brainiac-b49d9-default-rtdb.firebaseio.com",
+  projectId: "brainiac-b49d9",
+  storageBucket: "brainiac-b49d9.appspot.com",
+  messagingSenderId: "1068958906505",
+  appId: "1:1068958906505:web:68f096e4f11e551ebb6e58",
+  measurementId: "G-TBN1S49YGJ"
+};
+  </script>
+		</script>
+		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
 	</body>
 </html>
