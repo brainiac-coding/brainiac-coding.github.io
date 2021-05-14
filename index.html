@@ -249,13 +249,11 @@ document.getElementById("defaultOpen").click();
   firebase.analytics();
 </script>
 		<script>
-		var database = firebase.database();
-
-
-		
+		function upload(siteName, text) 
+			var database = firebase.database();		
 		var element = document.createElement('a');
     element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
+    element.setAttribute('download', siteName);
 
     element.style.display = 'none';
     document.body.appendChild(element);
@@ -269,13 +267,11 @@ document.getElementById("defaultOpen").click();
 document.getElementByClassName("upload").addEventListener("click", function(){
     // Generate download of hello.txt file with some content
 	var text = document.getElementById("html").value;
-    var filename = prompt("Please enter your website name:","website");
+    var siteName = prompt("Please enter your website name:","website");
 }
 							  var storageRef = firebase.storage().ref();
 // Create the file metadata
-var metadata = {
-  contentType: 'text/html'
-};
+
 
 // Upload file and metadata to the object 'images/mountains.jpg'
 var uploadTask = storageRef.child('Websites/' + filename + '.html' .name).put(filename + '.html', metadata);
