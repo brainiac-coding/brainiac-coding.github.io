@@ -147,6 +147,29 @@ float: left;
 		
 			<pre><button id="dwn-btn"><i class="fa fa-download"></i>&nbsp;Download</button></pre>
 	<pre><button class="upload"><span class="fa fa-upload"></span>&nbsp;Upload to Brainiac Web</button></pre>
+	<pre><button class="fullscreen" onclick="openFullscreen()"><span>&#xe5d0;</span>&nbsp;Fullscreen</button></pre>
+	<script>
+		var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+	
+}
+		function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+}
+		</script>
 		</div>	
 		<div id="Ref" class="tabcontent">
 		<h1>Structure Rules</h1>
