@@ -167,24 +167,16 @@ float: left;
 	<script>
 		var elem = document.documentElement;
 function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-	
+document.getElementById("code").style.width="100%";
+	document.getElementByClassName("code").style.height="100%";
+	document.getElementByClassName("code").style.zIndex="2";
+	if (escAlert=2){	
+	}else{
+	alert("Press Esc to exit");	
+	}
+	var escAlert = 2;	
 }
-		function closeFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) { /* Safari */
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) { /* IE11 */
-    document.msExitFullscreen();
-  }
-}
+		
 		</script>
 		</div>	
 		<div id="Ref" class="tabcontent">
