@@ -168,24 +168,51 @@ float: left;
 		var elem = document.documentElement;
 function openFullscreen() {
 var escAlert = 1;
+	document.body.style.display="none";
 	if (escAlert=2){
+		document.getElementByClassName("code").style.display="block";
+		document.getElementByClassName("code").style.top="0px";
 		document.getElementById("code").style.width="100%";
 	document.getElementByClassName("code").style.height="100%";
 	document.getElementByClassName("code").style.zIndex="2";
 		document.getElementByClassName("code").style.left="0px";
 		document.getElementByClassName("code").style.top="0px";
+		document.getElementByClassName("code").style.border="none";
 	}else{
 	alert("Press Esc to exit");
+		document.getElementByClassName("code").style.display="block";
 		document.getElementById("code").style.width="100%";
 	document.getElementByClassName("code").style.height="100%";
 	document.getElementByClassName("code").style.zIndex="2";
 		document.getElementByClassName("code").style.left="0px";
 		document.getElementByClassName("code").style.top="0px";
+		document.getElementByClassName("code").style.border="none";
 	var escAlert == 2;	
 	}
 }
 		
-		</script>
+	function keyPress (e) {
+    if(e.key === "Escape") {
+        document.body.style.display="block";
+	    document.getElementByClassName("code").style.display="block";
+		document.getElementByClassName("code").style.top="60px";
+		document.getElementById("code").style.width="50%";
+	document.getElementByClassName("code").style.height="496px";
+	document.getElementByClassName("code").style.zIndex="2";
+		document.getElementByClassName("code").style.left="50%";
+	    document.getElementByClassName("code").style.borderTop="4px #aaaaff solid";
+	    document.getElementByClassName("code").style.borderBottom="4px #aaaaff solid";
+    /*position:absolute;
+	left:50%;
+  width: 50%;
+  height: 496px;
+	top:60px;
+	border:none;
+	border-top: 4px #aaaaff solid;
+	border-bottom: 4px #aaaaff solid;*/
+    }
+}
+	</script>
 		</div>	
 		<div id="Ref" class="tabcontent">
 		<h1>Structure Rules</h1>
