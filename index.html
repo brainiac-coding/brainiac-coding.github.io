@@ -167,14 +167,22 @@ float: left;
 	<script>
 		var elem = document.documentElement;
 function openFullscreen() {
-document.getElementById("code").style.width="100%";
+var escAlert = 1;
+	if (escAlert=2){
+		document.getElementById("code").style.width="100%";
 	document.getElementByClassName("code").style.height="100%";
 	document.getElementByClassName("code").style.zIndex="2";
-	if (escAlert=2){	
+		document.getElementByClassName("code").style.left="0px";
+		document.getElementByClassName("code").style.top="0px";
 	}else{
-	alert("Press Esc to exit");	
+	alert("Press Esc to exit");
+		document.getElementById("code").style.width="100%";
+	document.getElementByClassName("code").style.height="100%";
+	document.getElementByClassName("code").style.zIndex="2";
+		document.getElementByClassName("code").style.left="0px";
+		document.getElementByClassName("code").style.top="0px";
+	var escAlert == 2;	
 	}
-	var escAlert = 2;	
 }
 		
 		</script>
